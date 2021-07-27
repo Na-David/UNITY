@@ -29,6 +29,19 @@ namespace ENUM
         {
             Item NewItem = new Item();
             NewItem.itemType = ITEMTYPE.Quest;
+
+            Console.WriteLine(ITEMTYPE.Quest);
+
+            ITEMTYPE Type = ITEMTYPE.Portion;
+            switch (Type)
+            {
+                case ITEMTYPE.Equip:
+                    break;
+                case ITEMTYPE.Portion:
+                    break;
+                case ITEMTYPE.Quest:
+                    break;
+            }
         }
     }
 }

@@ -62,9 +62,11 @@ namespace TextRPG001
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
+
+                        Console.WriteLine("");
                         Console.Write("Restoring the HP ......");
                         Console.ReadKey();
-                        //??
+                        _player.Heal();
                         break;
                     case ConsoleKey.D2:
                         break;
@@ -110,6 +112,21 @@ namespace TextRPG001
         int HP = 50;
         int MaxHP = 100;
 
+        public void Heal()
+        {
+            if (HP >= MaxHP)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Player's HP is already full.");
+                Console.ReadKey();
+            } else
+            {
+                HP = MaxHP;
+                HPStatus();
+                return;
+            }
+        }
+
         public void StatusRender()
         {
             Console.WriteLine("---------------------------------");
@@ -121,6 +138,13 @@ namespace TextRPG001
             Console.Write("/");
             Console.WriteLine(MaxHP);
             Console.WriteLine("---------------------------------");
+        }
+
+        public void HPStatus()
+        {
+            Console.WriteLine("");
+            Console.Write("Player's HP is now: {0}",HP);
+            Console.ReadKey();
         }
     }
 

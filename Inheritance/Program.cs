@@ -10,7 +10,7 @@ class Fight
     protected int ATK = 10;
     protected int HP = 100;
 
-    public void Damage(Fight _fight)
+    public void Damage(Fight _OtherUnit)
     {
 
     }
@@ -29,7 +29,7 @@ class Player : Fight
 
 class Monster : Fight
 {
-
+    int EXP = 10;
 }
 
 namespace Inheritance
@@ -43,7 +43,9 @@ namespace Inheritance
             Player NewPlayer = new Player();
             Monster NewMonster = new Monster();
 
-
+//            Fight fight = NewPlayer;
+            NewPlayer.Damage(NewMonster);
+            NewMonster.Damage(NewPlayer);
         }
     }
 }

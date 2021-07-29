@@ -117,13 +117,31 @@ namespace TextRPG001
         }
     }
 
-    class Player
+    class FightUnit
     {
-        string Name = "Player";
-        int ATK = 10;
-        int HP = 50;
-        int MaxHP = 100;
+        protected string Name = "None";
+        protected int ATK = 10;
+        protected int HP = 50;
+        protected int MaxHP = 100;
 
+        public void StatusRender()
+        {
+            Console.WriteLine(Name);
+            Console.Write("ATK : ");
+            Console.WriteLine(ATK);
+
+            Console.Write("HP : ");
+            Console.Write(HP);
+            Console.Write("/");
+            Console.WriteLine(MaxHP);
+            Console.WriteLine("---------------------------------");
+        }
+
+    }
+
+
+    class Player : FightUnit
+    {
         public void Heal()
         {
             if (HP >= MaxHP)
@@ -139,18 +157,6 @@ namespace TextRPG001
             }
         }
 
-        public void StatusRender()
-        {
-            Console.WriteLine(Name);
-            Console.Write("ATK : ");
-            Console.WriteLine(ATK);
-
-            Console.Write("HP : ");
-            Console.Write(HP);
-            Console.Write("/");
-            Console.WriteLine(MaxHP);
-            Console.WriteLine("---------------------------------");
-        }
 
         public void HPStatus()
         {
@@ -160,25 +166,8 @@ namespace TextRPG001
         }
     }
 
-    class Monster
+    class Monster : FightUnit
     {
-        string Name = "Monster";
-        int ATK = 10;
-        int HP = 50;
-        int MaxHP = 100;
-
-        public void StatusRender()
-        {
-            Console.WriteLine(Name);
-            Console.Write("ATK : ");
-            Console.WriteLine(ATK);
-
-            Console.Write("HP : ");
-            Console.Write(HP);
-            Console.Write("/");
-            Console.WriteLine(MaxHP);
-            Console.WriteLine("---------------------------------");
-        }
 
     }
 }

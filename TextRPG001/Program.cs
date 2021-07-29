@@ -56,6 +56,7 @@ namespace TextRPG001
                 Console.WriteLine("1. Restore the HP");
                 Console.WriteLine("2. Enhance the weapon");
                 Console.WriteLine("3. Leave Town");
+
                 //            Console.ReadKey();
                 //            ConsoleKey CK = Console.ReadKey().Key;
 
@@ -76,10 +77,20 @@ namespace TextRPG001
             }
         }
 
-        static void Field()
+        static void Field(Player _player)
         {
-            Console.WriteLine("This field is yet opened.");
-            Console.ReadKey();
+            //            Console.WriteLine("This field is closed now.");
+            //            Console.ReadKey();
+
+            Monster monster1 = new Monster();
+
+            while (true)
+            {
+                Console.Clear();
+                _player.StatusRender();
+                monster1.StatusRender();
+                Console.ReadKey();
+            }
         }
 
 
@@ -97,7 +108,7 @@ namespace TextRPG001
                         Town(Player1);
                         break;
                     case SELECT.selectfield:
-                        Field();
+                        Field(Player1);
                         break;
                     default:
                         break;
@@ -108,6 +119,7 @@ namespace TextRPG001
 
     class Player
     {
+        string Name = "Player";
         int ATK = 10;
         int HP = 50;
         int MaxHP = 100;
@@ -129,7 +141,7 @@ namespace TextRPG001
 
         public void StatusRender()
         {
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine(Name);
             Console.Write("ATK : ");
             Console.WriteLine(ATK);
 
@@ -150,6 +162,23 @@ namespace TextRPG001
 
     class Monster
     {
+        string Name = "Monster";
+        int ATK = 10;
+        int HP = 50;
+        int MaxHP = 100;
+
+        public void StatusRender()
+        {
+            Console.WriteLine(Name);
+            Console.Write("ATK : ");
+            Console.WriteLine(ATK);
+
+            Console.Write("HP : ");
+            Console.Write(HP);
+            Console.Write("/");
+            Console.WriteLine(MaxHP);
+            Console.WriteLine("---------------------------------");
+        }
 
     }
 }

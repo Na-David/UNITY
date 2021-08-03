@@ -82,7 +82,7 @@ namespace TextRPG001
             //            Console.WriteLine("This field is closed now.");
             //            Console.ReadKey();
 
-            Monster monster1 = new Monster();
+            Monster monster1 = new Monster("Pig");
 
             while (true)
             {
@@ -97,6 +97,8 @@ namespace TextRPG001
         static void Main(string[] args)
         {
             Player Player1 = new Player();
+
+
 
             while (true)
             {
@@ -123,6 +125,11 @@ namespace TextRPG001
         protected int ATK = 10;
         protected int HP = 50;
         protected int MaxHP = 100;
+
+        public void SetName(string _Name)
+        {
+            Name = _Name;
+        }
 
         public void StatusRender()
         {
@@ -157,6 +164,10 @@ namespace TextRPG001
             }
         }
 
+        public Player()
+        {
+            Name = "Player";
+        }
 
         public void HPStatus()
         {
@@ -168,6 +179,10 @@ namespace TextRPG001
 
     class Monster : FightUnit
     {
+        public Monster(string _Name)
+        {
+            Name = _Name;
+        }
 
     }
 }

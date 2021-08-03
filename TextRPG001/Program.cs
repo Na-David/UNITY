@@ -84,13 +84,25 @@ namespace TextRPG001
 
             Monster monster1 = new Monster("Pig");
 
-            while (true)
+            // fight until anyone die
+            while (monster1.IsDead() == false && _player.IsDead() == false)
             {
                 Console.Clear();
                 _player.StatusRender();
                 monster1.StatusRender();
-                Console.ReadKey();
+
+                monster1.Damage(_player);
+                if (monster1.IsDead() == false)
+                {
+                    _player.Damage(monster1);
+                }
+
             }
+
+
+            Console.WriteLine("Battle has been completed");
+            Console.ReadKey();
+            return;
         }
 
 
@@ -126,6 +138,11 @@ namespace TextRPG001
         protected int HP = 50;
         protected int MaxHP = 100;
 
+        public bool IsDead()
+        {
+            return HP <= 0;
+        }
+
         public void SetName(string _Name)
         {
             Name = _Name;
@@ -144,6 +161,12 @@ namespace TextRPG001
             Console.WriteLine("---------------------------------");
         }
 
+        public void Damage(FightUnit _OtherUnit)
+        {
+            Console.Write(Name + " got " + _OtherUnit.ATK + " damage.");
+            HP -= _OtherUnit.ATK;
+            Console.ReadKey();
+        }
     }
 
 
@@ -179,6 +202,7 @@ namespace TextRPG001
 
     class Monster : FightUnit
     {
+
         public Monster(string _Name)
         {
             Name = _Name;

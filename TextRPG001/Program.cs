@@ -45,7 +45,7 @@ namespace TextRPG001
 
         }
         
-        static void Town(Player _player)
+        static SELECT Town(Player _player)
         {
 
             while (true)
@@ -72,12 +72,12 @@ namespace TextRPG001
                     case ConsoleKey.D2:
                         break;
                     case ConsoleKey.D3:
-                        return;
+                        return SELECT.Non_select;
                 }
             }
         }
 
-        static void Field(Player _player)
+        static SELECT Field(Player _player)
         {
             //            Console.WriteLine("This field is closed now.");
             //            Console.ReadKey();
@@ -101,8 +101,17 @@ namespace TextRPG001
 
 
             Console.WriteLine("Battle has been completed");
+
+            if (monster1.IsDead() == true)
+            {
+                Console.WriteLine("You won!");
+            }
+            else
+            {
+                Console.WriteLine("Defeated");
+            }
             Console.ReadKey();
-            return;
+            return SELECT.selecttown;
         }
 
 
@@ -110,19 +119,21 @@ namespace TextRPG001
         {
             Player Player1 = new Player();
 
+            SELECT SelectCheck = Start();
 
 
             while (true)
             {
-                SELECT SelectCheck = Start();
-
                 switch (SelectCheck)
                 {
                     case SELECT.selecttown:
-                        Town(Player1);
+                        SelectCheck = Town(Player1);
                         break;
                     case SELECT.selectfield:
-                        Field(Player1);
+                        SelectCheck = Field(Player1);
+                        break;
+                    case SELECT.Non_select:
+                        SelectCheck = Start();
                         break;
                     default:
                         break;
@@ -163,7 +174,7 @@ namespace TextRPG001
 
         public void Damage(FightUnit _OtherUnit)
         {
-            Console.Write(Name + " got " + _OtherUnit.ATK + " damage.");
+            Console.WriteLine(Name + " got " + _OtherUnit.ATK + " damage.");
             HP -= _OtherUnit.ATK;
             Console.ReadKey();
         }

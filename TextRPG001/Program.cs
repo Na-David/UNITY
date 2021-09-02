@@ -161,15 +161,11 @@ namespace TextRPG001
 
         public void StatusRender()
         {
-            Console.WriteLine(Name);
-            Console.Write("ATK : ");
-            Console.WriteLine(ATK);
-
-            Console.Write("HP : ");
-            Console.Write(HP);
-            Console.Write("/");
-            Console.WriteLine(MaxHP);
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine(Name + "'s Status ===");
+            Console.WriteLine("ATK : " + ATK.ToString());
+ 
+            Console.WriteLine("HP : " + HP.ToString() + "/" + MaxHP.ToString());
+            Console.WriteLine("=====================");
         }
 
         public void Damage(FightUnit _OtherUnit)

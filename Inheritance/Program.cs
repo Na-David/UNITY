@@ -10,6 +10,8 @@ class Fight
     protected int ATK = 10;
     protected int HP = 100;
 
+    
+
     public void Damage(Fight _OtherUnit)
     {
 

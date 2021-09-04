@@ -147,7 +147,19 @@ namespace TextRPG001
         protected string Name = "None";
         protected int ATK = 10;
         protected int HP = 50;
-        protected int MaxHP = 100;
+        protected int m_MaxHP = 100;
+
+        public int MaxHP
+        {
+            get
+            {
+                return m_MaxHP;
+            }
+            set
+            {
+                m_MaxHP = value;
+            }
+        }
 
         public bool IsDead()
         {
@@ -196,7 +208,7 @@ namespace TextRPG001
 
         public Player()
         {
-            Name = "Player";
+            Name = "Magician";
         }
 
         public void HPStatus()

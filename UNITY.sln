@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Property", "Property\Proper
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassFile", "ClassFile\ClassFile.csproj", "{27930B47-98EA-436F-8734-8B1D7177D32A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partition", "Partition\Partition.csproj", "{711E03C2-6915-4E0A-933B-C4F9B5B29444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{27930B47-98EA-436F-8734-8B1D7177D32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27930B47-98EA-436F-8734-8B1D7177D32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27930B47-98EA-436F-8734-8B1D7177D32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711E03C2-6915-4E0A-933B-C4F9B5B29444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711E03C2-6915-4E0A-933B-C4F9B5B29444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711E03C2-6915-4E0A-933B-C4F9B5B29444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711E03C2-6915-4E0A-933B-C4F9B5B29444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

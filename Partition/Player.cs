@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Partition
 {
-    class Player
+    partial class Player
     {
         void Func()
         {

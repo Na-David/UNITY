@@ -8,7 +8,7 @@ namespace Partition
 {
     partial class Player
     {
-        public void Func()
+        public void EventStart()
         {
 
         }
